@@ -1,3 +1,4 @@
+import CartWidget from './CartWidget'
 import { Navbar, Nav } from 'react-bootstrap'
 
 function NavBar () {
@@ -9,9 +10,10 @@ function NavBar () {
                 <Nav className="mr-auto">
                     <Nav.Link href="#features">Novedades</Nav.Link>
                     <Nav.Link href="#products">Productos</Nav.Link>
-                    <Nav.Link href="#aboutus">Acerca de Nosostros</Nav.Link>
+                    <Nav.Link href="#about-us">Acerca de Nosostros</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
+            <CartWidget />
         </Navbar>
     )
 }

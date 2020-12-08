@@ -8,7 +8,7 @@ function Hero() {
         <>
             <h1>Bienvenidos a mi tienda</h1>
             <p>Vendemos zapatillas y zapatos</p>
-            <button onClick={saludar}>Saludar</button>
+            {/* <button onClick={saludar}>Saludar</button> */}
         </>
     )
 }
