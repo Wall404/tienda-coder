@@ -1,5 +1,6 @@
 import { Card } from "react-bootstrap";
 import { useState } from "react";
+import "./ItemContainer.css";
 
 function ItemContainer() {
   const [cant, setCant] = useState(1);
@@ -19,7 +20,11 @@ function ItemContainer() {
           -
         </button>
         <span>{cant}</span>
-        <button className="btn" variant="light" onClick={() => setCant(cant + 1)}>
+        <button
+          className="btn"
+          variant="light"
+          onClick={() => setCant(cant + 1)}
+        >
           +
         </button>
         {/* <input type="text" value={cant} /> */}
