@@ -1,8 +1,9 @@
-import { Card } from "react-bootstrap";
+import { Container, Card, Button, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./ItemContainer.css";
 
-function ItemContainer() {
+const ItemContainer = ({ id, titulo, precio }) => {
   const [cant, setCant] = useState(1);
 
   const restarCantidad = () => {
@@ -12,25 +13,34 @@ function ItemContainer() {
   };
 
   return (
-    <Card style={{ width: "10rem" }}>
-      <Card.Img variant="top" src="https://via.placeholder.com/120" alt="" />
-      <Card.Body>
-        <Card.Title>Producto</Card.Title>
-        <button className="btn" variant="light" onClick={restarCantidad}>
-          -
-        </button>
-        <span>{cant}</span>
-        <button
-          className="btn"
-          variant="light"
-          onClick={() => setCant(cant + 1)}
-        >
-          +
-        </button>
-        {/* <input type="text" value={cant} /> */}
-      </Card.Body>
-    </Card>
+    <Container>
+      <Card style={{ width: "15rem" }}>
+        <Card.Img
+          //   variant="top"
+          src="https://via.placeholder.com/130"
+          alt=""
+          thumbnail
+        />
+        <Card.Body className="card-data">
+          <Card.Title>{titulo}</Card.Title>
+          <Row xs={3}>
+            <Button variant="light" onClick={restarCantidad}>
+              -
+            </Button>
+            <p>{cant}</p>
+            <Button variant="primary" onClick={() => setCant(cant + 1)}>
+              +
+            </Button>
+          </Row>
+          <p>${precio}</p>
+          {/* <input type="text" value={cant} /> */}
+          <Button variant="info">
+            <Link to={`/detail/${id}`}>Ver Detalle</Link>
+          </Button>
+        </Card.Body>
+      </Card>
+    </Container>
   );
-}
+};
 
 export default ItemContainer;

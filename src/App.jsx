@@ -1,22 +1,31 @@
 import "./styles/App.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Hero from "./components/Home/Hero";
 import Footer from "./components/glolal/Footer";
 import NavBar from "./components/glolal/Navbar";
-import ItemListContainer from "./components/ItemList/ItemListContainer";
-
 import Category from "./components/Category";
+import Detail from "./components/Details";
 // import zapatillaPuma from './assets/zapatilla.jpg'
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <NavBar />
-      <Hero />
-      {/* <ItemListContainer /> */}
-      <Category />
-      {/* <img src={zapatillaPuma} alt="zapatilla marca Puma Azul"/> */}
+
+      <Switch>
+        <Route exact path="/">
+          <Hero />
+        </Route>
+        <Route path="/category/">
+          <Category />
+        </Route>
+		<Route path="/detail/:id">
+			<Detail />
+		</Route>
+      </Switch>
+
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 

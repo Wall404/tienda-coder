@@ -1,3 +1,5 @@
+import ItemListContainer from '../ItemList/ItemListContainer'
+
 function Hero() {
 
     const saludar = () => {
@@ -9,6 +11,7 @@ function Hero() {
             <h1>Bienvenidos a mi tienda</h1>
             <p>Vendemos zapatillas y zapatos</p>
             {/* <button onClick={saludar}>Saludar</button> */}
+            <ItemListContainer />
         </>
     )
 }
