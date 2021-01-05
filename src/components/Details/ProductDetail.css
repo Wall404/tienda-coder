@@ -1,0 +1,80 @@
+.producto {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-gap: 3rem;
+}
+
+.producto .foto img {
+    width: 100%;
+}
+
+.producto .info .title {
+    font-size: 3rem;
+    color: var(--color-secundario);
+    margin-bottom: 1.5rem;
+}
+
+.producto .info .description {
+    font-size: 1.4rem;
+    color: var(--text);
+    margin-bottom: 2rem;
+}
+
+.producto .info .price {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2rem;
+}
+
+.producto .cant {
+    width: 150px;
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+.producto .cant button {
+    width: 20%;
+    border: none;
+    padding: 0.5rem;
+    outline: none;
+    cursor: pointer;
+    background: var(--color-principal);
+    border-radius: 1rem;
+    color: var(--blanco);
+    font-size: 1.5rem;
+}
+
+.producto .cant button:disabled {
+    background: #ddd;
+    cursor: no-drop;
+}
+
+.producto .cant input {
+    width: 60%;
+    text-align: center;
+    border: none;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    outline: none;
+}
+
+.producto .btn {
+    width: 150px;
+    display: block;
+    border: none;
+    padding: 1rem;
+    outline: none;
+    cursor: pointer;
+    background: var(--color-principal);
+    border-radius: 1rem;
+    color: var(--blanco);
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    transition: background 0.5s;
+}
+
+.producto .btn:hover {
+    background: #0758af;
+}
