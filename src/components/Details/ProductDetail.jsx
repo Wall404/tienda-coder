@@ -1,12 +1,24 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./ProductDetail.css";
+import { Store } from "../../store";
+// import { useHistory } from "react-reouter-dom";
 
 const ProductDetail = ({ item }) => {
+  // const history = useHistory()
+  const [data, setData] = useContext(Store);
   const [cant, setCant] = useState(1);
 
   const onAdd = () => {
-    alert(`Agregaste $(cant) productos al carrito`);
+    // alert(`Agregaste $(cant) productos al carrito`);
+    setData({
+      ...data,
+      cantidad: data.cantidad + cant,
+      items: [...data.items, item],
+    });
+    // history.push('/cart')
   };
+
+  console.log(data);
 
   const handleClickRestar = () => {
     if (cant > 1) {
