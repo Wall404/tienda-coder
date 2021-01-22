@@ -36,6 +36,7 @@ const ProductDetail = ({ item }) => {
       <p>{item.precio}</p>
       <div className="cant">
         <button
+          className="btn"
           disabled={cant === 1 ? "disabled" : null}
           onClick={handleClickRestar}
         >

@@ -8,7 +8,7 @@ function CartWidget() {
   const [data, setData] = useContext(Store);
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
-  const ref = useRef(null);
+  const ref = useRef(data);
 
   const handleClick = (event) => {
     setShow(!show);
@@ -38,7 +38,7 @@ function CartWidget() {
         containerPadding={20}
       >
         <Popover id="popover-contained">
-          <Popover.Title as="h3">Popover bottom</Popover.Title>
+          <Popover.Title as="h3">Carrito</Popover.Title>
           <Popover.Content>
             <h1>Contenido del Carrito</h1>
             {data.items.map((item) => (
